@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#tasklist::-webkit-scrollbar{
+    display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+    /* background-color: #dadada; */
+    background-color: white;
+}
+
+.admin-tasks::-webkit-scrollbar{
+    display: none;
+}
+.user-details::-webkit-scrollbar{
+  display: none;
+}
+.tasks {
+    transition: margin-top 0.5s ease;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .tasks.hideForm {
+    margin-top: 0;
+  }
+  
+  .no-scroll::-webkit-scrollbar{
+   display: none;
+  }
