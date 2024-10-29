@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './adminDashboard.css'
 import CreateTask from './CreateTask';
 import AllTasks from './AllTasks';
 import UserTasks from './UserTasks';
