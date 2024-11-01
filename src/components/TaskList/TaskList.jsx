@@ -61,21 +61,21 @@ const TaskList = () => {
           key={task._id}
           onMouseLeave={() => setShowComments(false)}
           onClick={()=>setShowComments((prev) =>prev === task._id ? 'All' : task._id)}
-          className={`flex flex-col justify-between gap-3 sm:h-full sm:flex-shrink-0 w-[100%] sm:w-[25rem]  rounded-3xl p-3 transition-all duration-1000 ease-in-out`}
+          className={`flex flex-col justify-between gap-3 sm:flex-shrink-0 w-[100%] sm:w-[25rem]  rounded-3xl p-3 transition-all duration-1000 ease-in-out shadow-md`}
         >
           <SingleTask task={task} />
 
 
-          {task.status !== 'Completed' && task.status !== 'Failed' && (
+          {/* {task.status !== 'Completed' && task.status !== 'Failed' && (
             <div
               className={`accept-complete-failed ${showComments !== task._id ? ' sm:inline' :'' }`}
             >
               {!task.accepted ? (
                 <div
                   onClick={(e) => markTask(task._id, 'accepted', e)}
-                  className={`priority cursor-pointer text-center bg-[#007bffbb] p-1 rounded-xl`}
+                  className={`priority cursor-pointer text-center text-white bg-[#007bffbb] p-1 rounded-xl`}
                 >
-                  <p>Accept Task</p>
+                  <p >Accept Task</p>
                 </div>
               ) : (
                 <div>
@@ -96,7 +96,7 @@ const TaskList = () => {
                 </div>
               )}
             </div>
-          )}
+          )} */}
         </div>
       ))}
     </div>

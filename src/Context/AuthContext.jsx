@@ -35,7 +35,7 @@ const AuthContext = ({ children }) => {
     } else {
       // If token exists, redirect based on role
       
-      const dashboardRoute = user.role === 'admin' ? '/adminDashboard' : '/eployeeDashboard';
+      const dashboardRoute = user.role === 'admin' ? '/adminDashboard' : '/employeeDashboard';
       if (window.location.pathname === '/') {
         navigate(dashboardRoute);
       }

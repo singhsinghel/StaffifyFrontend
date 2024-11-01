@@ -59,7 +59,7 @@ export default function CreateUser() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6">
           {/* Left Column for Section Titles */}
           <div className="md:col-span-1">
-          <h2 onClick={returnPreviousRoute} className="cursor-pointer text-base font-semibold leading-7 text-[#077BFF]"><i className='bx bx-arrow-back '></i> createTask</h2>
+          <h2 onClick={returnPreviousRoute} className="cursor-pointer text-base font-semibold leading-7 text-[#077BFF]"><i className='bx bx-arrow-back '></i>Back to previous</h2>
             <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
               Enter your personal information below.
@@ -242,7 +242,7 @@ export default function CreateUser() {
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button
             type="submit"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md bg-[#007Bff] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Create
           </button>

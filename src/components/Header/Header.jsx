@@ -16,7 +16,7 @@ const Header = () => {
   }
   return (
     <div className='flex flex-col '>
-     <div className='z-50 fixed w-full shadow shadow-zinc-400 py-8 md:py-12  px-10 sm:px-8 lg:px-40 flex h-20 justify-between items-center mb-3 bg-white text-gray-600'>
+     <div className='z-50 fixed w-full shadow shadow-zinc-200 py-8 md:py-12  px-10 sm:px-8 lg:px-40 flex h-20 justify-between items-center mb-3 bg-white text-gray-600'>
       <h1 onClick={()=>navigate('/')} className='cursor-pointer text-xl text-[#007BFF] font-medium'>Staffify
       </h1>
       <div className="header-optioins flex gap-3 justify-evenly items-center">

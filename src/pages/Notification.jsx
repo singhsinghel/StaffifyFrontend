@@ -32,7 +32,7 @@ const Notification = () => {
 
   return user.notifications.length > 0 ? (
     <div>
-      <div className="flex mt-8 justify-center">
+      <div className="flex mt-8 justify-center ">
         <div className="w-1/6 hidden lg:inline">
           <p onClick={() => navigate(-1)} className="text-[#007BFF] font-semibold text-nowrap cursor-pointer">
             <i className="bx bx-arrow-back"></i> Back to previous
@@ -51,7 +51,7 @@ const Notification = () => {
           </p>
 
           {/* mapping all notifications */}
-          <div className="notifications rounded-md bg-white flex flex-col mt-5">
+          <div className="notifications rounded-md bg-white flex flex-col mt-5 shadow-md">
             {user.notifications.map((notification, index) => (
               <div
                 key={index}
@@ -63,7 +63,7 @@ const Notification = () => {
                 onMouseLeave={() => setDeleteButton(null)}
                 className={`flex justify-between hover:bg-slate-100 ${
                   index === user.notifications.length - 1 ? '' : 'border-b border-gray-200'
-                } items-center w-full cursor-pointer p-4`}
+                } items-center w-full cursor-pointer p-4 `}
               >
                 <p>{notification.message}</p>
                 {deleteButton !== notification._id ? (

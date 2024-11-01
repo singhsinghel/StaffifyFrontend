@@ -2,10 +2,19 @@ import React, { useContext, useState } from 'react'
 import { StoreContext } from '../../Context/AuthContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Login from '../Auth/Login/Login';
+
 
 
 const singleTask = ({task}) => {
+
+
+    const location=useLocation();
+    const employeeDashboard=location.pathname==='/employeeDashboard';
+
     const [comment,setComment]=useState();
+    const [showComments, setShowComments] = useState('All');
     const {url,token,user,setUser}=useContext(StoreContext);
     const addComment = async (e, taskId) => {
         e.preventDefault();
@@ -27,6 +36,26 @@ const singleTask = ({task}) => {
           toast.error("An error occurred while adding the comment");
         }
       };
+
+      const markTask = async (id, status, e) => {
+        e.stopPropagation();
+        try {
+          const response = await axios.put(
+            `${url}/api/task/update`,
+            { status, taskId: id },
+            { headers: { token } }
+          );
+          if (response.data.success) {
+            fetchTasks();
+            toast.success(response.data.message);
+          } else {
+            toast.warn(response.data.message);
+          }
+        } catch (error) {
+          toast.error("Failed to update task status");
+        }
+      };
+        
   return (
     <div>
            {task && (
@@ -91,6 +120,38 @@ const singleTask = ({task}) => {
                 </div>
               </form>
             </div>
+            {employeeDashboard && task.status !== 'Completed' && task.status !== 'Failed' && (
+  <div
+    className={`accept-complete-failed ${showComments !== task._id ? ' sm:inline' : ''}`}
+  >
+    {!task.accepted ? (
+      <div
+        onClick={(e) => markTask(task._id, 'accepted', e)}
+        className="priority cursor-pointer text-center text-white bg-[#007bffbb] p-1 rounded-xl"
+      >
+        <p>Accept Task</p>
+      </div>
+    ) : (
+      <div>
+        <div className="complete-fail flex justify-around text-sm">
+          <button
+            onClick={(e) => markTask(task._id, 'Completed', e)}
+            className="bg-green-100 text-[#28A745] p-1 rounded-md"
+          >
+            Mark as completed
+          </button>
+          <button
+            onClick={(e) => markTask(task._id, 'Failed', e)}
+            className="bg-red-100 text-red-500 p-1 rounded-md"
+          >
+            Mark as failed
+          </button>
+        </div>
+      </div>
+    )}
+  </div>
+)}
+
         </>
       )}
     </div>

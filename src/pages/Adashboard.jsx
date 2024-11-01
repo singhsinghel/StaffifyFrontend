@@ -3,7 +3,7 @@ import AdminDashboard from '../components/DashBoard/AdminDashboard/AdminDashboar
 
 const Adashboard = () => {
   return (
-
+      
       <AdminDashboard />
   )
 }

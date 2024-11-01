@@ -10,6 +10,7 @@ import { StoreContext } from './Context/AuthContext';
 import Alert from './components/alerts/Alert';
 import Notification from './pages/Notification';
 import CreateUser from './pages/CreateUser';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     <>
     {token&&<Header />}
     
-    <div className={`${token&&"pt-28 p-3"} text-[#343A40] bg-zinc-100 px-0 sm:px-4 lg:px-40`}>
+    <div className={`${token&&"pt-[6rem] p-3"} text-[#343A40]  px-0 sm:px-4 lg:px-40`}>
       <Alert />
     <Routes>
       <Route path='/notification' element={<Notification />} />
@@ -33,12 +34,13 @@ function App() {
       )
       :
       <>
-      <Route path='/eployeeDashboard' element={<Edashboard />} />
+      <Route path='/employeeDashboard' element={<Edashboard />} />
   
       </>
       } 
     </Routes>
     </div>
+      {token&&<Footer />}
     </>
   )
 }

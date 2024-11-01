@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   const [showUsers,setShowUsers]=useState('tasks');
   const [hideForm,setHideForm]=useState(false)
   return (
-  <>
+  <div className='bg-white'>
     {!hideForm&&<CreateTask />}
 
     <div className={`tasks ${hideForm ? 'hideForm' : ''} transition-all`}>
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
      {showUsers === 'tasks' && <AllTasks hideForm={hideForm} />}
      {showUsers === 'users' && <UserTasks hideForm={hideForm} />}
     </div>
-  </>
+  </div>
   );
   
 }
