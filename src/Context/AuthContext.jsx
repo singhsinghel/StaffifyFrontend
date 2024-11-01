@@ -8,7 +8,7 @@ const AuthContext = ({ children }) => {
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [user,setUser]=useState(JSON.parse(localStorage.getItem('user'))||'')
-  const url = 'http://localhost:8080';
+  const url = 'https://staffify-backend.onrender.com';
   const[users, setUsers]=useState([]);
 
   const fetchUsers=async()=>{
