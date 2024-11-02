@@ -46,7 +46,7 @@ const Login = ({setAuthMode}) => {
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
           <div className="max-w-md mx-auto">
             <div>
-              <h1 className="text-2xl font-semibold">Login </h1>
+              <h1 className="text-2xl font-semibold"><span className='text-[#007BFF] text-4xl'>Staffify</span> <br /> Login</h1>
             </div>
             <div className="divide-y divide-gray-200">
               <form onSubmit={formSubmitHandler}>
