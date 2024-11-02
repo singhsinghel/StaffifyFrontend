@@ -62,7 +62,7 @@ const singleTask = ({task}) => {
         <>
             <div
               onClick={(e) => e.stopPropagation()}
-              className="task-details max-w-96 h-96 flex flex-col justify-between sm:max-w-full bg-white p-4 rounded-lg"
+              className="task-details min-w-96 h-96 flex flex-col justify-between sm:max-w-full bg-white p-4 rounded-lg"
             >
               <div className="task-details">
               <div className="title flex justify-between mb-2">

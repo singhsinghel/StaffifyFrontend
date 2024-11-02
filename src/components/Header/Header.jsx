@@ -41,8 +41,8 @@ const Header = () => {
       {/* pc-options */}
       <div className="header-option hidden md:flex items-center gap-3">
           <div className="noti-bell relative">
-             <i onClick={()=>navigate('/notification')} class='bx bxs-bell text-xl focus:text-[#007BFF]'></i>
-             {user.notifications.length>0&& <i class='bx bxs-circle absolute text-[#007BFF] text-[0.5rem] top-0 right-0'></i>}
+             <i onClick={()=>navigate('/notification')} class='bx cursor-pointer bxs-bell text-xl focus:text-[#007BFF]'></i>
+             {user.notifications.length>0&& <i class='bx bxs-circle  absolute text-[#007BFF] text-[0.5rem] top-0 right-0'></i>}
            </div>
       <button onClick={logout} className='hover:text-[#007BFF] rounded-sm py-1 px-3 font-medium'>Logout</button>
       <p
